@@ -1,0 +1,8 @@
+/*
+for each car model, the amount of units now available in stock is calculated, adjusting the value of the original quantity in stock after all the made sales.
+*/
+SELECT cars."Quantity_In_Stock" - SUM(sales."Quantity") AS stock_left
+FROM cars
+LEFT JOIN sales
+ON cars."Car_ID" = sales."Car_ID"
+GROUP BY sales."Car_ID", cars."Quantity_In_Stock"

@@ -1,0 +1,9 @@
+/*
+for each car model, the total revenue broken down by payment method is calculated
+*/
+SELECT cars."Brand", cars."Model", sales."Payment_Method", SUM(sales."Quantity"*sales."Sale_Price") as total_sold
+FROM cars  
+LEFT JOIN sales
+ON cars."Car_ID" = sales."Car_ID" 
+GROUP BY cars."Brand", cars."Model", sales."Payment_Method"
+ORDER BY total_sold DESC

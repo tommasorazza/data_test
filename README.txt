@@ -9,14 +9,15 @@ The content of these tables is loaded on a PostgreSql database by running loadin
 Finally, the content of these tables has been analyzed and queried through pgadmin4, the content of the queries is inside queries.txt file.
 It is worth noting how the query nr.2 has highlighted some inconsistencies in the data, in that the number returned is negative, which is not possible since it should represent the current number of cars in stock. 
 
-Project structure:
 my_project/
 ├─ data/
-│ ├─ cars.csv
-│ ├─ sales.csv
-│ └─ customers.csv
+│   ├─ cars.csv
+│   ├─ sales.csv
+│   └─ customers.csv
 ├─ scripts/
-│ └─ loading_script.py
-├─ sql/
-│ └─ queries.txt
-└─ README.txt
+│   └─ loading_script.py 
+├─ queries/
+│   ├─ first_query.psql 
+│   ├─ second_query.psql 
+│   └─ third_query.psql 
+└─ README.md

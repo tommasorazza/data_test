@@ -1,0 +1,9 @@
+/*
+for each customer of the database, the total number of purchases is calculated as well as the total amount of money spent forall the purchases made.
+*/
+SELECT customers."Name", SUM(sales."Sale_Price") AS total_purchase , COUNT(*) AS number_purchases
+FROM sales
+LEFT JOIN customers 
+ON sales."Customer_ID" = customers."Customer_ID"
+GROUP BY customers."Name", sales."Customer_ID"
+ORDER BY total_purchase DESC
